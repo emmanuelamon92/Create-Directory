@@ -1,0 +1,10 @@
+{{>partials/header}}
+    <div class="container">
+        {{#robotDirectory}}
+          {{>robot}}
+        {{/robotDirectory}}
+        {{^robotDirectory}}
+          <p>What happen to the Robots?!</p>
+        {{/robotDirectory}}
+    </div>
+{{partials/footer}}
