@@ -6,9 +6,9 @@ function getRobots () {
 
 function getRobot (robotId) {
   let pickedRobot ={}
-  for (let i=0; i<robots.length; i++){
-    if (robots[i].id === robotId){
-      pickedRobot = robot[i]
+  for (let i=0; i<robots.users.length; i++){
+    if (robots.users[i].id == robotId){
+      pickedRobot = robots.users[i]
     }
   }
   return pickedRobot

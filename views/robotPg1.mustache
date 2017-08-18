@@ -1,10 +1,11 @@
-{{>partials/header}}
+{{>_header}}
+    <h1>{{title}}</h1>
     <div class="container">
         {{#robotDirectory}}
-          {{>robot}}
+            {{>_robot}}
         {{/robotDirectory}}
         {{^robotDirectory}}
-          <p>What happen to the Robots?!</p>
+            <p>What happen to the Robots?!</p>
         {{/robotDirectory}}
     </div>
-{{partials/footer}}
+{{_footer}}

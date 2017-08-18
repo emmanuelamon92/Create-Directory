@@ -1,8 +1,10 @@
 {
   "name": "",
   "version": "",
+  "main": "app.js",
   "dependencies": {
     "express": "^4.15.4",
-    "mustache-express": "^1.2.5"
+    "mustache-express": "^1.2.5",
+    "nodemon": "^1.11.0"
   }
 }
