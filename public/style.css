@@ -1,0 +1,23 @@
+.container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.robotCard{
+  width: 20%;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.robotCard img{
+  justify-content: center;
+}
+
+.robotInd img{
+  border: 1px solid black;
+  border-radius: 100%;
+}

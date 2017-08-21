@@ -2,9 +2,19 @@
   "name": "",
   "version": "",
   "main": "app.js",
+  "script": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon --config nodemon.json"
+  },
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.4",
+    "express-validator": "^3.2.1",
+    "mustache": "^2.3.0",
     "mustache-express": "^1.2.5",
     "nodemon": "^1.11.0"
-  }
+  },
+  "author": "Manny",
+  "license": "ISC"
 }

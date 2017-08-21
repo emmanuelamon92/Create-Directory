@@ -1,5 +1,8 @@
 const express = require('express')
+const bodyParser = require('body-parser')
+const path = require('path')
 const mustacheExpress = require('mustache-express')
+const expressValidator = require('express-validator')
 const robotFunc = require('./robotFunc')
 
 
@@ -7,9 +10,16 @@ const app = express()
 
 app.engine('mustache', mustacheExpress())
 app.set('view engine', 'mustache')
-app.set('views', __dirname + '/views')
+app.set('views', 'views')
 
-app.use(express.static('public'))
+//Body Parser Middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}))
+
+//we need somewhere to put static stuff like css or jquery etc.
+app.use(express.static(path.join(__dirname, 'public')))
+
+//Express Validator Middleware
 
 
 app.get('/', function(request, response){
@@ -18,8 +28,6 @@ app.get('/', function(request, response){
       Title: 'Robots Are Human',
       robotDirectory: robotDirectory.users
     })
-
-
 })
 // app.get('/robotDirectory', function(request, response){
 //   const robotDirectory = robotFunc.getRobots()
@@ -33,7 +41,7 @@ app.get('/robotDirectory/:id', function (request, response){
   // robotPick ={}
   const pickedRobot = robotFunc.getRobot(request.params.id)
   // const robotDirectory = robotFunc.getRobot()
-  console.log("object", pickedRobot)
+  // console.log("object", pickedRobot)
   if (pickedRobot){
     response.render('_robotIndv', pickedRobot)
     // console.log("number inside of if statment", pickedRobot)
@@ -43,5 +51,5 @@ app.get('/robotDirectory/:id', function (request, response){
 })
 
 app.listen(3000, function(){
-    console.log('Server Started on Port 3000...');
+    console.log('Server Started on Port 3000...')
 })
